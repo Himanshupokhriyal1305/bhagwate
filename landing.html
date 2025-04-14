@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Planet Carousel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Roboto&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="announcement-bar">
+    <div class="announcement-slider">
+      <p>Free Shipping on Orders Over $50!</p>
+      <p>New Arrivals: Shop Now!</p>
+      <p>Flash Sale: 50% Off Selected Items!</p>
+    </div>
+  </div>
+  <div class="main-container">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <i class="fa-solid fa-bars" id="menuToggle"></i>
+      <img src="./bhagwateimage/" alt="Bhagwate logo" class="chakra-icon mx-auto" id="mobileLogo">
+      <i class="fa-solid fa-magnifying-glass search-toggle-icon" id="searchToggle"></i>
+
+      <div class="search-input-mobile" id="mobileSearchBox">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="mobileSearchInput" placeholder="Search for brand, color, etc." />
+        <i class="fa-solid fa-xmark close-search-icon" id="closeSearch"></i>
+      </div>
+    </div>
+
+
+    <!-- Sidebar -->
+    <div class="sidebar-custom text-dark" id="sidebar">
+      <div class="d-flex justify-content-start mb-3">
+        <i class="fa fa-times fs-3" id="closeSidebar"></i>
+      </div>
+      <ul>
+        <li><strong>Browse</strong></li>
+        <li>Brands <i class="fa fa-chevron-right float-end"></i></li>
+        <li>Sneakers <i class="fa fa-chevron-right float-end"></i></li>
+        <hr />
+        <li>About</li>
+        <li>How It Works</li>
+        <li>New Releases</li>
+      </ul>
+    </div>
+
+    <!-- Desktop Header -->
+    <div class="desktop-header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white px-3 py-2">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./bhagwateimage/6674131722c961718883095-removebg-preview.png" alt=" bhagwate Logo"
+              class="chakra-icon" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+              <li class=""><a class="nav-link text-danger" href="#">SHOP</a></li>
+              <li class="nav-item"><a class="nav-link text-danger" href="#">PHOTOFRAM</a></li>
+              <li class="nav-item"><a class="nav-link text-danger" href="#">ALL PRODUCT</a></li>
+              <li class="nav-item"><a class="nav-link text-danger" href="#"></a></li>
+              <li class="nav-item  ">
+                <button class="neon-btn navbar-nav me-5"> Neon</button>
+
+              </li>
+
+            </ul>
+            <form class="d-flex align-items-center form-details mx-auto " onsubmit="submitSearch(event)">
+              <button type="submit" class="btn position-absolute ">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <input type="search" placeholder="Search for brand, color, etc." id="searchInput"
+                class="form-control ps-5 " />
+            </form>
+            <ul class="pt-2">
+              <div class="nav-item navbar-nav">
+                <button class="contact-btn">Contact Us</button>
+              </div>
+
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    <hr class="progress m-0 p-0">
+  </div>
+
+  <div class="w-100">
+    <div class="bg-light d-flex justify-content-center higher">
+      <div class="scroll-container d-flex align-items-center">
+        <div class="menu-item" onmouseover="showMenu('Deals')" onmouseout="hideMenu()">
+          <h6>Deals</h6>
+          <ul class="dropdown-menu" id="menu-Deals"></ul>
+        </div>
+        <div class="menu-item" onmouseover="showMenu('Brands')" onmouseout="hideMenu()">
+          <h6>Brands</h6>
+          <ul class="dropdown-menu" id="menu-Brands">d</ul>
+        </div>
+        <div class="menu-item" onmouseover="showMenu('Men')" onmouseout="hideMenu()">
+          <h6>Men</h6>
+          <ul class="dropdown-menu" id="menu-Men"></ul>
+        </div>
+        <div class="menu-item" onmouseover="showMenu('Sneaker')" onmouseout="hideMenu()">
+          <h6>Sneaker</h6>
+          <ul class="dropdown-menu" id="menu-Sneaker"></ul>
+        </div>
+        <div class="menu-item" onmouseover="showMenu('Kids')" onmouseout="hideMenu()">
+          <h6>Kids</h6>
+          <ul class="dropdown-menu" id="menu-Kids"></ul>
+        </div>
+        <!-- Add more menus as needed -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class='c-socials mt-3 text-white'>
+    <ul class='c-socials__list list-unstyled'>
+      <!-- Social Icons Here -->
+    </ul>
+  </div>
+
+  <section class='c-slider mt-3'>
+    <div class='c-top-text'>
+      <h2 class="text-danger fw-bold">50% OFF</h2>
+    </div>
+    <div class='c-slider-init text-white'>
+      <!-- Slider Item 1 -->
+      <div class='c-slide' style='background-image:url("./bhagwateimage/1.png") '>
+        <div class='c-slide-content'>
+          <div class='c-wrap c-wrap--line'>
+            <h2 class='c-slide__title'>Underwater <span class='c-slide__title--large'>Monsters</span></h2>
+          </div>
+          <div class='c-wrap c-wrap--small'>
+            <div class='c-slide__info'>
+              <h3 class='c-slide__subtitle'>Saltwater Crocodile</h3>
+              <p class='c-slide__body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Item 2 -->
+      <div class='c-slide' style='background-image:url("./bhagwateimage/1.png")'>
+        <div class='c-slide-content'>
+          <div class='c-wrap c-wrap--line'>
+            <h2 class='c-slide__title'>The <span class='c-slide__title--medium'>Gates of Hell</span></h2>
+          </div>
+          <div class='c-wrap c-wrap--small'>
+            <div class='c-slide__info'>
+              <h3 class='c-slide__subtitle'>Special inside volcanoes</h3>
+              <p class='c-slide__body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Item 3 -->
+      <div class='c-slide' style='background-image:url("./bhagwateimage/3.png")'>
+        <div class='c-slide-content'>
+          <div class='c-wrap c-wrap--line'>
+            <h2 class='c-slide__title'>Exploring <span class='c-slide__title--large'>Deep Caves</span></h2>
+          </div>
+          <div class='c-wrap c-wrap--small'>
+            <div class='c-slide__info'>
+              <h3 class='c-slide__subtitle'>Real Time Capsules</h3>
+              <p class='c-slide__body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='c-bottom-text'>
+      <h2 class="text-danger fw-bold">50% OFF - Limited Time Offer!</h2>
+    </div>
+  </section>
+  <!-- top catagorie -->
+  <div class="container mt-5">
+    <div class="shaking-text ">
+      Top Categories </div>
+
+    <div class="row d-flex justify-content-between mt-3">
+
+
+      <!-- Repeat for other neoncardss -->
+      <div class="col-md-4 col-lg-2 neoncardsBox">
+        <div class="neoncards card animated-neoncards content">
+          <div class="wrapper">
+            <img src="./bhagwateimage/./ramremove.png" class="cover-image" />
+          </div>
+          <img src="./bhagwateimage/" class="title" />
+          <img src="./bhagwateimage/./ram.png" class="character" />
+
+          <!-- New Content Section Added Here -->
+          <div class="content">
+            <h3>RAM JI NEON </h3>
+            <p>Premium quality ALL NEON NAME🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on NEON DESING</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 col-lg-2 neoncardsBox">
+        <div class="neoncards card animated-neoncards content">
+          <div class="wrapper">
+            <img src="./bhagwateimage/./OMremove.png" class="cover-image" />
+          </div>
+          <img src="./bhagwateimage/" class="title" />
+          <img src="./bhagwateimage/./OM.png" class="character" />
+
+          <!-- New Content Section Added Here -->
+          <div class="content">
+            <h3 class="">OM NEON </h3>
+            <p>Premium quality ALL NEON NAME🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on NEON DESING</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2 neoncardsBox">
+        <div class="neoncards card animated-neoncards content">
+          <div class="wrapper">
+            <img src="./bhagwateimage/./ramlaga.png" class="cover-image" />
+          </div>
+          <img src="./bhagwateimage/" class="title" />
+          <img src="./bhagwateimage/./ramji remove.png" class="character" />
+
+          <!-- New Content Section Added Here -->
+          <div class="content">
+            <h3 class="">OM NEON </h3>
+            <p>Premium quality ALL Wooden farme🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on NEON DESING</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2 neoncardsBox">
+        <div class="neoncards card animated-neoncards content">
+          <div class="wrapper">
+            <img src="./bhagwateimage/./birthday.png" class="cover-image" />
+          </div>
+          <img src="./bhagwateimage/" class="title" />
+          <img src="./bhagwateimage/./birthdayremove.png" class="character" />
+
+          <!-- New Content Section Added Here -->
+          <div class="content">
+            <h3 class="">OM NEON </h3>
+            <p>Premium quality ALL Wooden farme🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on NEON DESING</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+          </div>
+        </div>
+      </div>
+      <!-- Add more neoncardss as needed -->
+    </div>
+  </div>
+  <!-- polur Photo Frames -->
+  <div class="container mt-5" data-aos="zoom-in">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="Photo">Photo Frames</h2>
+      <h5 class="card-title">See All Types Photo Farme🎁<i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c05043bdaf41740656707.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+                Vastu Sastra Frame
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL Vastu Sastra FARME🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Photo Frames</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <div href="#" class="btn"> <div> </div> <div><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></div> </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67f38b37737871744014135.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+                God Letter Frame
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL Gods Letters FARME🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Photo Frames</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c0502cb55061740656684.webp" class="card-img-top" alt="...">
+          <div class="card-body mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+                Premium Gods Frames
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL Gods Frames FARME🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Photo Frames</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c08fe4493971740672996.webp" class="card-img-top" alt="...">
+          <div class="card-body mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title"> Personalised Frame
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL Personalised FARME🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Photo Frames</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- banner 1 -->
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      <!-- Left Banner -->
+      <div class="col-md-4">
+        <img src="./bhagwateimage/./3.png" class="banner1" alt="Left Banner">
+      </div>
+
+      <!-- Right Banner -->
+      <div class="col-md-8">
+        <img src="./bhagwateimage/./1.png" class="banner1 right-banner" alt="Right Banner">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Neon Art -->
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="card-title Photo">
+        Neon Art
+      </h2>
+      <h5 class="card-title">See All Neon Art 🎁<i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c843be219ea1741177790.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Ice Cream Neon LED
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL Ice Cream Neon LED 🎁 <strong class="text-dark">Limited Period Offer – </strong>
+              Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c84793deea21741178771.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+                Gym Mode ON Neon LED
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL Gym Mode ON LED 🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c841b9139881741177273.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+                NAME LED NEON Frame
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL NAME ,s LED NEON 🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c842a1741cd1741177505.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Hanging Bulb Neon
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Hanging Bulb Neon🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <!-- Wall Decor -->
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="Photo">
+        Wall Decoration
+      </h2>
+      <h5 class="card-title">See All Wall Decoration🎁 <i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/wooden_elephant_wooden_elephant_statue_wooden_elephant_set_wooden_elephant_showpiece_big_size_elephant_wooden_showpiece_wooden_elephants_for_home_decor_wooden_animals_for_home_decor_wooden_el.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67ea4b2a633de1743407914.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Dark Knight Silhouette LED
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality
+
+              Dark Knight Silhouettes 🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c04e20061b11740656160.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Hanging Bulb Neon
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Hanging Bulb Neon🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67e7b10774a431743237383.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+
+                Sacred Om LED
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality
+
+
+              Sacred Om LED Wall Art🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- banner2 -->
+  <div class="container my-5">
+    <h5 class="Photo">Browse More Brands</h5>
+    <div class="row">
+
+      <!-- Brand Cards -->
+      <div class="col-6 col-sm-6 col-md-3 mb-4">
+        <div class="brand-card">
+          <img src="./bhagwateimage/./67c04f9626c241740656534.webp" class="brand-img image-to-open" alt="Brand 1">
+          <div class="hover-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="svg-icon">
+              <path d="M10 4.167v11.666M4.167 10h11.666"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-3 mb-4">
+        <div class="brand-card">
+          <img src="./bhagwateimage/./67c04fc2aac8e1740656578.webp" class="brand-img image-to-open" alt="Brand 2">
+          <div class="hover-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="svg-icon">
+              <path d="M10 4.167v11.666M4.167 10h11.666"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-3 mb-4">
+        <div class="brand-card">
+          <img src="./bhagwateimage/./67c04e20061b11740656160.webp" class="brand-img image-to-open" alt="Brand 3">
+          <div class="hover-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="svg-icon">
+              <path d="M10 4.167v11.666M4.167 10h11.666"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-6 col-md-3 mb-4">
+        <div class="brand-card">
+          <img src="./bhagwateimage/./67bf5e7a9f2fc1740594810.png" class="brand-img image-to-open" alt="Brand 4">
+          <div class="hover-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" class="svg-icon">
+              <path d="M10 4.167v11.666M4.167 10h11.666"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--Name Plates  -->
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="card-title Photo">
+        Name Plates
+      </h2>
+      <h5 class="card-title">See All Name Plates🎁<i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+     <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c04d082a50a1740655880.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+Wooden
+  Name Plates
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Wooden
+              Name Plates🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+     <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c04d3f926f31740655935.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+Acrylic Name Plates
+
+                
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Acrylic Name Plates🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+     <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c04d56bb07b1740655958.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+         Business Sing Boards
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Business Sing Boards🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+     <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c0d6141a4301740690964.jpg" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Wall Clock -->
+  <div class="container mt-5" data-aos="flip-left">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="card-title Photo">
+        Wall Clock
+      </h2>
+      <h5 class="card-title">See All<i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+    <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/il_fullxfull.5010184656_abwy_800x.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+    <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/dc50-10002_3__1.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+    <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/writingsonthewallclocks_2_bedb16c1-0eea-439d-bfc5-d22d9eaa37a1.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+    <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./images.jfif" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- banner center -->
+   <div class="container mt-5" style="border: none;">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./bhagwateimage/1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./bhagwateimage/4.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./bhagwateimage/3.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+   </div>
+  <!--  Wooden Products-->
+  <div class="container mt-5" data-aos="fade-right">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="card-title Photo">
+        Wooden Products
+      </h2>
+      <h5 class="card-title">See All      Wooden Products <i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c0d6141a4301740690964.jpg" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c0d6141a4301740690964.jpg" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c0d6141a4301740690964.jpg" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c0d6141a4301740690964.jpg" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--  Led Lamps-->
+  <div class="container mt-5" data-aos="flip-left">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="card-title Photo">
+        Led Lamps
+      </h2>
+      <h5 class="card-title">See All<i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/colorful-unicorn-led-neon-light-lamp-unicorntable-lamproyalkart-the-urban-store-913776.jpg" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/pexels-theo-nael-1735692-23891492.jpg" class="card-img-top" alt="..." style="height: 305px;">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage//pexels-njeromin-15352967.jpg" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/pexels-photo-4792526.webp" class="card-img-top" alt="..." style="height: 305px;">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      <!-- Left Banner -->
+      <div class="col-md-4">
+        <img src="./bhagwateimage/./3.png" class="banner1" alt="Left Banner">
+      </div>
+
+      <!-- Right Banner -->
+      <div class="col-md-8">
+        <section class="heartfelt-unique">
+          <div class="heartfelt-carousel-container">
+            <button class="heartfelt-btn prev" onclick="heartfeltMoveSlide(-1)">&#10094;</button>
+
+            <div class="heartfelt-carousel-wrapper" id="heartfeltWrapper">
+              <!-- All cards go inside this wrapper -->
+              <div class="col-lg-3">
+                <div class=" allfarme ">
+                  <img src="./bhagwateimage/./67c04d082a50a1740655880.webp" class="card-img-top" alt="...">
+                  <div class="card- mt-3">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="card-title">
+        Wooden
+          Name Plates
+                      </h5>
+                      <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+                    </div>
+                    <p>Premium quality ALL
+        
+                      Wooden
+                      Name Plates🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+                      till
+                      Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+                    <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+        
+                    <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                        class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class=" allfarme ">
+                  <img src="./bhagwateimage/./67c843be219ea1741177790.png" class="card-img-top" alt="...">
+                  <div class="card- mt-3">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="card-title">
+        
+        
+                        Ice Cream Neon LED
+                      </h5>
+                      <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+                    </div>
+                    <p>Premium quality ALL Ice Cream Neon LED 🎁 <strong class="text-dark">Limited Period Offer – </strong>
+                      Valid
+                      till
+                      Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+                    <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+        
+                    <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                        class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="card allfarme ">
+                  <img src="./bhagwateimage/./67c0d6141a4301740690964.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="card-title">
+                        Premium Photo Frames
+                      </h5>
+                      <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+                    </div>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                      content.</p>
+                    <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+        
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class=" allfarme ">
+                  <img src="./bhagwateimage/./67c05043bdaf41740656707.webp" class="card-img-top" alt="...">
+                  <div class="card- mt-3">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="card-title">
+                        Vastu Sastra Frame
+                      </h5>
+                      <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+                    </div>
+                    <p>Premium quality ALL Vastu Sastra FARME🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+                      till
+                      Diwali Only! <strong class="text-danger">Flat 50% OFF on Photo Frames</strong> </p>
+                    <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+        
+                    <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                        class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img src="./bhagwateimage/./buleberryimage/greeting-card-gallery-07.webp" class="card-img-top"
+                  alt="...">
+                <div class="card-body">
+                  <h4 class="card-title fw-bold">Card 5</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="heartfelt-btn next" onclick="heartfeltMoveSlide(1)">&#10095;</button>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+  <!--  Gifts-->
+  <div class="container mt-5" data-aos="slide-up">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="card-title Photo">
+        Gifts
+      </h2>
+      <h5 class="card-title">See All   Gifts 🎁<i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c02edd4a1391740648157.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+Birthday Special
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Birthday Special🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on   Gifts</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c02ed270c861740648146.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+             Anniversary & Couple Gifts
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+         
+              Anniversary & Couple Gifts🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Gifts</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c02ec426eb11740648132.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+             Wedding & Engagement Gifts
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Wedding & Engagement Gifts🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Gifts</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c02efcf15f41740648188.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+          Festival Special
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+              Festival Special🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Gifts</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--  DIY Arts-->
+  <div class="container mt-5" data-aos="fade-down">
+    <div class="d-flex justify-content-between p-5">
+      <h2 class="card-title Photo">
+        DIY Arts
+      </h2>
+      <h5 class="card-title">See All  DIY Arts<i class="fa-solid fa-arrow-right"></i></h5>
+    </div>
+    <div class="row">
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c090a792cf01740673191.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+            MDF Shapes
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              MDF Shapes🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Diy Arts</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/./67c090c8ab1b01740673224.webp" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+            Diy Kit
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+              Diy Kit🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on Diy Kit</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class=" allfarme ">
+          <img src="./bhagwateimage/spring-showers-string-art-SM-file.png" class="card-img-top" alt="...">
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+       <div class="col-lg-3">
+        <div class="  allfarme ">
+          <img src="./bhagwateimage/IMG_8924.webp" class=" card-img-top" alt="..." style="height: 310px;" >
+          <div class="card- mt-3">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+
+
+                Cute Tree Buddy Round
+              </h5>
+              <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+            </div>
+            <p>Premium quality ALL
+
+              Cute Tree Buddy LED🎁 <strong class="text-dark">Limited Period Offer – </strong> Valid
+              till
+              Diwali Only! <strong class="text-danger">Flat 50% OFF on LED NEON</strong> </p>
+            <h5>₹499 <small style="text-decoration: line-through; color: #bbb;">₹799</small></h5>
+
+            <a href="#" class="btn"><i class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i
+                class="fa-solid fa-star text-warning"></i>
+              <i class="fa-solid fa-star text-warning"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ 
+
+  <!-- footer -->
+  <footer class="footer bg-dark mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="./bhagwateimage/./6674131722c961718883095-removebg-preview.png" alt="Logo" class="mb-2" />
+          <p>
+            Transform your construction, interior design, and architectural
+            dreams into reality with home done well! Contact us today for a
+            consultation.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h5>Legal Information</h5>
+          <ul class="list-unstyled ">
+            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#service">Customer Service</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#return">Return Policy</a></li>
+
+            <li><a href="#about">About us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5>Top Product</h5>
+          <ul class="list-unstyled">
+            <li><a href="#black-tea">Photo Frame</a></li>
+            <li><a href="#loose-leaf">Neon Sing</a></li>
+            <li><a href="#green-tea">Wall Art</a></li>
+            <li><a href="#sencha-tea">LED</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <address class="w-100">
+            Gali-2, Shivpuri, Modinagar - Niwari Rd, near Rajchopla, Shiv Puri, 201204
+            Gift Shop in Modinagar, Uttar Pradesh <br />
+            <abbr title="Phone"> <i class="fa-solid fa-phone"></i> Phone :</abbr> +91 9259351545<br />
+            <a href="mailto:Info@example.com"><i class="fa-solid fa-envelope"></i> support@bhagwate.com</a>
+          </address>
+          <div class="social-icons">
+            <a href="https://twitter.com" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com" target="_blank" class="social-icon facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon linkedin"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram"><i
+                class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+
+        <p class="mb-0">Designed & Developed By Bhagwate</p>
+      </div>
+    </div>
+
+
+  </footer>
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</body>
+<script src="script.js">
+
+</script>
+
+</html>
